@@ -66,7 +66,8 @@ resource "aws_autoscaling_attachment" "target-http" {
   ]
 
   autoscaling_group_name = aws_autoscaling_group.k3s_workers_asg.name
-  alb_target_group_arn   = aws_lb_target_group.external-lb-tg-http[count.index].arn
+  #alb_target_group_arn   = aws_lb_target_group.external-lb-tg-http[count.index].arn
+  lb_target_group_arn   = aws_lb_target_group.external-lb-tg-http[count.index].arn
 }
 
 # HTTPS
@@ -123,5 +124,6 @@ resource "aws_autoscaling_attachment" "target-https" {
   ]
 
   autoscaling_group_name = aws_autoscaling_group.k3s_workers_asg.name
-  alb_target_group_arn   = aws_lb_target_group.external-lb-tg-https[count.index].arn
+  #alb_target_group_arn   = aws_lb_target_group.external-lb-tg-https[count.index].arn
+  lb_target_group_arn   = aws_lb_target_group.external-lb-tg-https[count.index].arn
 }
