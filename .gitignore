@@ -39,3 +39,4 @@ terraform.rc
 
 *Pipfile
 *Pipfile.lock
+.terraform.lock.hcl
